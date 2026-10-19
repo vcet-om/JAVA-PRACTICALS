@@ -30,6 +30,6 @@ This repository contains the complete, tested source code and outputs for all 25
 | 22 | [Practical-22](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/Practical-22) | JDBC transaction management and stored procedure with CallableStatement |
 | 23 | [Practical-23](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/Practical-23) | Hibernate / ORM database persistence simulation |
 | 24 | [Practical-24](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/Practical-24) | Testing a Java program using JUnit 5 assertions |
-| 25 | [Practical-25](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/Practical-25) | Mini Project: Student Record Management System |
+| 25 | [Practical-25](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/Practical-25) | Mini Project: Student Record Management System ([Vadvan-management](https://github.com/omspradippatil/Vadvan-management)) |
 
 Each folder contains the clean, self-contained Java source code along with its dedicated `README.md` containing the aim, compile/run commands, and exact terminal output.

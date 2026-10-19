@@ -95,5 +95,7 @@ public class StudentRecordApp {
 
         System.out.println("\n--- Updated Student Records ---");
         manager.displayAll();
+
+        System.out.println("\nProject Repository: https://github.com/omspradippatil/Vadvan-management");
     }
 }

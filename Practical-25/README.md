@@ -3,6 +3,9 @@
 ## Aim
 Console-based Student Record Management System with add, view, search, and delete functionality using OOP and Collections.
 
+## Project Repository
+[Vadvan Management Repository](https://github.com/omspradippatil/Vadvan-management)
+
 ## Files
 - `StudentRecordApp.java`: Source code implementation.
 
@@ -41,4 +44,6 @@ Deleted record with ID 103.
 ID: 101   | Name: Aarav Sharma    | Dept: CSE        | GPA: 8.90
 ID: 102   | Name: Sneha Patel     | Dept: IT         | GPA: 9.20
 ------------------------------------------------------------------
+
+Project Repository: https://github.com/omspradippatil/Vadvan-management
 ```
