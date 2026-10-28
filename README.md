@@ -33,3 +33,6 @@ This repository contains the complete, tested source code and outputs for all 25
 | 25 | [Practical-25](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/Practical-25) | Mini Project: Student Record Management System ([Vadvan-management](https://github.com/omspradippatil/Vadvan-management)) |
 
 Each folder contains the clean, self-contained Java source code along with its dedicated `README.md` containing the aim, compile/run commands, and exact terminal output.
+
+### Interactive User Input Edition (`scanner/`)
+An interactive edition of all practicals driven by dynamic user input using `java.util.Scanner` is available in the [`scanner/`](file:///Users/om/Desktop/Projects/JAVA-PRACTICALS/scanner) folder with the exact same structure (`Practical-01` to `Practical-25`).
