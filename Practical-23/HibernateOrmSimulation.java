@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @Retention(RetentionPolicy.RUNTIME)
 @interface Entity {}
@@ -80,10 +81,30 @@ class SimpleEntityManager {
 }
 
 public class HibernateOrmSimulation {
+    private static final String MYSQL_URL = "jdbc:mysql://localhost:3306/javadb?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
+    private static final String MYSQL_USER = "root";
+    private static final String MYSQL_PASSWORD = "";
+
+    private static final String H2_URL = "jdbc:h2:mem:ormdb;DB_CLOSE_DELAY=-1";
+    private static final String H2_USER = "sa";
+    private static final String H2_PASSWORD = "";
+
+    public static Connection getConnection() throws SQLException {
+        try {
+            Connection conn = DriverManager.getConnection(MYSQL_URL, MYSQL_USER, MYSQL_PASSWORD);
+            System.out.println("Connected to local MySQL database successfully.");
+            System.out.println("Database Engine: " + conn.getMetaData().getDatabaseProductName() + " " + conn.getMetaData().getDatabaseProductVersion());
+            return conn;
+        } catch (SQLException e) {
+            System.out.println("[Notice] Local MySQL not reachable (" + e.getMessage() + "). Falling back to embedded H2 database.");
+            return DriverManager.getConnection(H2_URL, H2_USER, H2_PASSWORD);
+        }
+    }
+
     public static void main(String[] args) {
-        String url = "jdbc:h2:mem:ormdb;DB_CLOSE_DELAY=-1";
-        try (Connection conn = DriverManager.getConnection(url, "sa", "")) {
+        try (Connection conn = getConnection()) {
             try (Statement stmt = conn.createStatement()) {
+                stmt.execute("DROP TABLE IF EXISTS products");
                 stmt.execute("CREATE TABLE products (id INT PRIMARY KEY, name VARCHAR(50), price DOUBLE)");
             }
 
@@ -104,7 +125,7 @@ public class HibernateOrmSimulation {
             }
 
         } catch (Exception e) {
-            System.out.println("Hibernate Error: " + e.getMessage());
+            System.err.println("Hibernate/ORM Error: " + e.getMessage());
         }
     }
 }
